@@ -40,7 +40,7 @@ class MyHandler(BaseHTTPRequestHandler):
             s.send_response(200)
             s.send_header("Content-type", "text/html")
             s.end_headers()
-            s.wfile.write(bytes('<form action="/setInput" method="post">', 'utf-8'))
+            s.wfile.write(bytes('<form action="/setInput.php" method="post" enctype="multipart/form-data">', 'utf-8'))
             s.wfile.write(bytes('<html><body><h2>Weldability Checker:</h2>', "utf-8"))
 
             s.wfile.write(bytes('<br>Upload your .prt file containing the welding lines<br><input type="file" name="prtFileUploaded" id="prtFileUploaded">', "utf-8"))
@@ -50,8 +50,10 @@ class MyHandler(BaseHTTPRequestHandler):
             s.wfile.write(bytes('<br><br><input type="submit" value="Submit"></form><p> Click "Submit" to submit file and nozzle to check weldability.</p>', "utf-8"))
             s.wfile.write(bytes('<br><h3>Weldability check :</h3>', "utf-8"))
             s.wfile.write(bytes('<img src="theProduct.png" width="400" height="275"></body></html>', "utf-8"))
+
+            s.wfile.write(bytes('<?php $info = pathinfo($_FILES["userFile"]["name"]); $newname = "newname".prt; $target = "prtFiles/".$newname; move_uploaded_file( $_FILES["userFile"]["tmp_name"], $target); ?>', "utf-8"))
         
-        else:
+        else:   
             s.send_response(200)
             s.send_header("Content-type", "text/html")
             s.end_headers()
@@ -66,7 +68,6 @@ def do_POST(s):
         s.send_response(200)
         s.send_header("Content-type", "text/html")
         s.end_headers()
-        within_constraints = False
 
         # Check what is the path
         path = s.path
@@ -77,11 +78,18 @@ def do_POST(s):
             param_line = post_body.decode()
             print("Body: ", param_line)
 
+            ctype, pdict = cgi.parse_header(
+                self.headers.getheader('content-type'))
+            if ctype == 'multipart/form-data':
+                fields = cgi.parse_multipart(self.rfile, pdict)
+                messagecontent = fields.get('message')
+
             s.send_response(200)
             s.send_header("Content-type", "text/html")
             s.end_headers()
-            s.wfile.write(bytes('<form action="/setInput" method="post">', 'utf-8'))
+            s.wfile.write(bytes('<form action="/setInput" method="post" enctype="multipart/form-data">', 'utf-8'))
             s.wfile.write(bytes('<html><body><h2>Weldability Checker:</h2>', "utf-8"))
+            s.wfile.write(bytes('<br> Thank you for using oour weldability checker!'))
 
             s.wfile.write(bytes('<br>Upload your .prt file containing the welding lines<br><input type="file" name="prtFileUploaded" id="prtFileUploaded">', "utf-8"))
             s.wfile.write(bytes('<br><input type="submit" value="Upload file" name="Upload file">', "utf-8"))
@@ -90,6 +98,19 @@ def do_POST(s):
             s.wfile.write(bytes('<br><br><input type="submit" value="Submit"></form><p> Click "Submit" to submit file and nozzle to check weldability.</p>', "utf-8"))
             s.wfile.write(bytes('<br><h3>Weldability check :</h3>', "utf-8"))
             s.wfile.write(bytes('<img src="theProduct.png" width="400" height="275"></body></html>', "utf-8"))
+
+            return nozzle
+
+        else:
+            s.send_response(200)
+            s.send_header("Content-type", "text/html")
+            s.end_headers()
+            s.wfile.write(
+                bytes('<html><head><title>Cool interface.</title></head>', 'utf-8'))
+            s.wfile.write(
+                bytes("<body><p>The path: " + path + "</p>", "utf-8"))
+            s.wfile.write(bytes('</body></html>', "utf-8"))
+
 
         
 
