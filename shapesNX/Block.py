@@ -53,4 +53,30 @@ class Block:
 		blockfeaturebuilder1.BooleanOption.Type = NXOpen.GeometricUtilities.BooleanOperation.BooleanType.Create
 		
 		self.body = blockfeaturebuilder1.Commit().GetBodies()[0]
+		
+		theSession  = NXOpen.Session.GetSession()
+		workPart = theSession.Parts.Work
+			
+		displayModification1 = theSession.DisplayManager.NewDisplayModification()
+		
+		displayModification1.ApplyToAllFaces = True
+		
+		displayModification1.ApplyToOwningParts = False
+
+		if self.color == "RED":
+			displayModification1.NewColor = 186
+		elif self.color == "GREEN":
+			displayModification1.NewColor = 108
+		else:
+			displayModification1.NewColor = 40
+
+		objects1 = [NXOpen.DisplayableObject.Null] * 1 
+		#This is where we find the blocks name
+
+		body1 = blockfeaturebuilder1.Commit().GetBodies()[0]
+		objects1[0] = body1
+		displayModification1.Apply(objects1)
+		
+		displayModification1.Dispose()
+		
 		blockfeaturebuilder1.Destroy()
