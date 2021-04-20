@@ -42,7 +42,7 @@ class MyHandler(SimpleHTTPRequestHandler):
             s.send_response(200)
             s.send_header("Content-type", "text/html")
             s.end_headers()
-            s.wfile.write(bytes('<form action="uploadFile" method="post">', 'utf-8'))
+            s.wfile.write(bytes('<form action="uploadFile" method="post" enctype="multipart/form-data">', 'utf-8'))
             s.wfile.write(bytes('<html><body><h2>Weldability Checker:</h2>', "utf-8"))
 
             s.wfile.write(bytes('<br>Upload your .prt file containing the welding lines<br><input type="file" id="myFile" name="myFile">', "utf-8"))
@@ -51,7 +51,7 @@ class MyHandler(SimpleHTTPRequestHandler):
             s.wfile.write(bytes('<br><br>Selct type of nozzle:<br><select name="nozzle" id="nozzle"><option value="RECESSED">Recessed</option><option value="FLUSH">Flush</option><option value="PROTRUDING">Protruding</option><option value="ADJUSTABLE">Adjustable</option><option value="CUSTOM">Custom</option></select>', "utf-8"))
             s.wfile.write(bytes('<br><br><input type="submit" value="Submit"></form><p> Click "Submit" to submit file and nozzle to check weldability.</p>', "utf-8"))
             s.wfile.write(bytes('<br><h3>Weldability check :</h3>', "utf-8"))
-            s.wfile.write(bytes('<img src="theProduct.png" width="400" height="275"></body></html>', "utf-8"))
+            # s.wfile.write(bytes('<img src="theProduct.png" width="400" height="275"></body></html>', "utf-8"))
 
         else:   
             s.send_response(200)
@@ -88,7 +88,7 @@ class MyHandler(SimpleHTTPRequestHandler):
             #post_body = s.rfile.read(content_len)
             #param_line = post_body.decode()
             #print("Body: ", param_line)
-            s.wfile.write(bytes('<form action="uploadFile" method="post">', 'utf-8'))
+            s.wfile.write(bytes('<form action="uploadFile" method="post" enctype="multipart/form-data">', 'utf-8'))
             s.wfile.write(bytes('<html><body><h2>Weldability Checker:</h2>', "utf-8"))
             s.wfile.write(bytes('<br> Thank you for using our weldability checker!'))
 
@@ -98,9 +98,9 @@ class MyHandler(SimpleHTTPRequestHandler):
             s.wfile.write(bytes('<br><br>Selct type of nozzle:<br><select name="nozzle" id="nozzle"><option value="RECESSED">Recessed</option><option value="FLUSH">Flush</option><option value="PROTRUDING">Protruding</option><option value="ADJUSTABLE">Adjustable</option><option value="CUSTOM">Custom</option></select>', "utf-8"))
             s.wfile.write(bytes('<br><br><input type="submit" value="Submit"></form><p> Click "Submit" to submit file and nozzle to check weldability.</p>', "utf-8"))
             s.wfile.write(bytes('<br><h3>Weldability check :</h3>', "utf-8"))
-            s.wfile.write(bytes('<img src="theProduct.png" width="400" height="275"></body></html>', "utf-8"))
+            #s.wfile.write(bytes('<img src="theProduct.png" width="400" height="275"></body></html>', "utf-8"))
 
-            return nozzle
+            return nozzle, myFile
 
         else:
             s.send_response(200)
