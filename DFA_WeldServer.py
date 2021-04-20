@@ -42,7 +42,7 @@ class MyHandler(SimpleHTTPRequestHandler):
             s.send_response(200)
             s.send_header("Content-type", "text/html")
             s.end_headers()
-            s.wfile.write(bytes('<form action="uploadFile" method="post" enctype="multipart/form-data">', 'utf-8'))
+            s.wfile.write(bytes('<form action="uploadFile" method="post">', 'utf-8'))
             s.wfile.write(bytes('<html><body><h2>Weldability Checker:</h2>', "utf-8"))
 
             s.wfile.write(bytes('<br>Upload your .prt file containing the welding lines<br><input type="file" id="myFile" name="myFile">', "utf-8"))
@@ -64,8 +64,8 @@ class MyHandler(SimpleHTTPRequestHandler):
             s.wfile.write(bytes('</body></html>', "utf-8"))
 
     def do_POST(s):
-        r, info = self.deal_post_data()
-        print(r, info, "by: ", self.client_address)
+        r, info = s.deal_post_data()
+        print(r, info, "by: ", s.client_address)
         f = io.BytesIO()
         if r:
             f.write(b"Success\n")
@@ -73,14 +73,13 @@ class MyHandler(SimpleHTTPRequestHandler):
             f.write(b"Failed\n")
         length = f.tell()
         f.seek(0)
-        self.send_response(200)
-        self.send_header("Content-type", "text/plain")
-        self.send_header("Content-Length", str(length))
-        self.end_headers()
+        s.send_response(200)
+        s.send_header("Content-type", "text/plain")
+        s.send_header("Content-Length", str(length))
+        s.end_headers()
         if f:
-            self.copyfile(f, self.wfile)
+            s.copyfile(f, s.wfile)
             f.close()      
-
         # Check what is the path
         path = s.path
         print("Path: ", path)
@@ -89,8 +88,7 @@ class MyHandler(SimpleHTTPRequestHandler):
             #post_body = s.rfile.read(content_len)
             #param_line = post_body.decode()
             #print("Body: ", param_line)
-
-            s.wfile.write(bytes('<form action="uploadFile" method="post" enctype="multipart/form-data">', 'utf-8'))
+            s.wfile.write(bytes('<form action="uploadFile" method="post">', 'utf-8'))
             s.wfile.write(bytes('<html><body><h2>Weldability Checker:</h2>', "utf-8"))
             s.wfile.write(bytes('<br> Thank you for using our weldability checker!'))
 
@@ -116,11 +114,11 @@ class MyHandler(SimpleHTTPRequestHandler):
 
 
     def deal_post_data(s):
-        ctype, pdict = cgi.parse_header(self.headers['Content-Type'])
+        ctype, pdict = cgi.parse_header(s.headers['Content-Type'])
         pdict['boundary'] = bytes(pdict['boundary'], "utf-8")
-        pdict['CONTENT-LENGTH'] = int(self.headers['Content-Length'])
+        pdict['CONTENT-LENGTH'] = int(s.headers['Content-Length'])
         if ctype == 'multipart/form-data':
-            form = cgi.FieldStorage( fp=self.rfile, headers=self.headers, environ={'REQUEST_METHOD':'POST', 'CONTENT_TYPE':self.headers['Content-Type'], })
+            form = cgi.FieldStorage( fp=s.rfile, headers=s.headers, environ={'REQUEST_METHOD':'POST', 'CONTENT_TYPE':s.headers['Content-Type'], })
             print (type(form))
             try:
                 if isinstance(form["file"], list):
