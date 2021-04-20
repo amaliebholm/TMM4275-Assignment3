@@ -112,7 +112,8 @@ class MyHandler(SimpleHTTPRequestHandler):
                 bytes("<body><p>The path: " + path + "</p>", "utf-8"))
             s.wfile.write(bytes('</body></html>', "utf-8"))
 
-
+    # Using the code Andrei showed pasted into simpleHTTPRequestHandler.py
+    # Something not right in gere 
     def deal_post_data(s):
         ctype, pdict = cgi.parse_header(s.headers['Content-Type'])
         pdict['boundary'] = bytes(pdict['boundary'], "utf-8")
