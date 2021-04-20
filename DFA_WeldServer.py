@@ -121,11 +121,11 @@ class MyHandler(SimpleHTTPRequestHandler):
             form = cgi.FieldStorage( fp=s.rfile, headers=s.headers, environ={'REQUEST_METHOD':'POST', 'CONTENT_TYPE':s.headers['Content-Type'], })
             print (type(form))
             try:
-                if isinstance(form["file"], list):
-                    for record in form["file"]:
+                if isinstance(form["myFile"], list):
+                    for record in form["myFile"]:
                         open("./uploads", "wb").write(record.file.read())
                 else:
-                    open("./uploads"%form["file"].filename, "wb").write(form["file"].file.read())
+                    open("./uploads"%form["myile"].filename, "wb").write(form["myFile"].file.read())
             except IOError:
                     return (False, "Can't create file to write, do you have permission to write?")
         return (True, "Files uploaded")
