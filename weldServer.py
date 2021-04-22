@@ -40,11 +40,12 @@ def home():
 def upload_file():
     if request.method == 'POST':
         file = request.files['file']
+        oldname = file.filename
         file.filename = "weldingModel.prt"
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         print("File: ", filename)
-        return render_template("uploader.html", filename=filename)
+        return render_template("uploader.html", filename=oldname)
 
 
 @app.route('/result', methods=['GET', 'POST'])
