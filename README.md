@@ -58,13 +58,13 @@ In assignment 1 Olingvo and Apache Jena Fuseki was used to communicate with the 
 ![img name](img url)
 
 ### Example 1 
-![img name](img url) - customer setting input 
-![img name](img url) - reviecing result
-
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze%20prt%20file%20example.PNG) - customer setting input 
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/mazetest%20above.PNG) - reviecing result
+With Recessed nuzzle.
 ### Example 2
-![img name](img url) - customer setting input 
-![img name](img url) - reviecing result
-
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze%20prt%20file%20example.PNG) - customer setting input 
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/mazetest%20flush.PNG) - reviecing result
+With flushed nozzle
 ### Example 3
 ![img name](img url) - customer setting input 
 ![img name](img url) - reviecing result
