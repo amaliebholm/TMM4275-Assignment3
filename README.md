@@ -18,7 +18,7 @@ The costumer will upload and define:
 
 ### The KBE Application Architecture
 This is a diagram showing the main blocks and interconnections between them. 
-![img name](img url)
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/Weld%20Main%20Blocks.png)
 
 
 The main lines of the KBE architecture are the same as in assignment 1 and 2, where the customer will give inputs on a website, but in stead of setting values for different parameter, as in the previous assignments, the customer will now upload a .prt file as well. In the previous assignments the values have been transfered to a DFA file, which have been uploaded to NX, in this assignment the .prt file is directly uploaded to NX. As in assignment 2, there is no need for a Fuseki server her either, as the constraints are given by the choice of welding gun and that a ".prt" file is the only possible file to upload. 
@@ -26,8 +26,7 @@ The main lines of the KBE architecture are the same as in assignment 1 and 2, wh
 ### ULM Sequence Diagram
 The ULM sequence diagram showing how an order making scenario will play out. All the way from how the customer uploading the file to the webage, to the algorithm checking the volumes in NX, and displaying the result back to the customer on a webpage. 
 
-![img name](img url)
-
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/Weld%20Sequence%20Diagram.png)
 In assignment 1 Olingvo and Apache Jena Fuseki were used to communicate with the server containing the parameters. These constraints were set by both the customer and the product engineer. In assignment 2 the product engineer set a DFA template which was written to the DFA server, as well as checking if they are within the room, and not needing a Manufacture Checker Server or a Fuseki Server. Now, in assigment 3 the constraints are set by having specific nozzle sizes provided by the product engineer and by the base of the maze that the customer uploads.
 
 Another difference from assignment 1 is that the web browser client now uses three different websites, rather than only one, to get the values from the customer. This makes the sequence diagram more complex on the left hand side for assignment 2 compared to assignment 1. This is the case for assigment three as well, though the structure is not as complex as it was for assigment 2. 
