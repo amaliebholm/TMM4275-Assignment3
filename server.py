@@ -40,6 +40,7 @@ def home():
 def upload_file():
     if request.method == 'POST':
         file = request.files['file']
+        file.filename = "weildingModel.prt"
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         print("File: ", filename)
