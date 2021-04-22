@@ -2,7 +2,6 @@ from flask import Flask, redirect, url_for, render_template, request
 from werkzeug.utils import secure_filename
 import os
 from os import listdir
-# import kasper sin fil her
 
 # FOR Å RUNNE SERVEREN ER DET BARE Å RUNNE DENNE FILEN. URL DUKKER OPP I TERMINALEN.
 
