@@ -6,6 +6,7 @@ import math
 import NXOpen
 from shapesNX.Block import Block
 from operator import itemgetter
+import NXOpen.Gateway
 
 
 all_lines = []
@@ -16,7 +17,7 @@ ystart = 0
 height = 0
 width = 0
 rectanlges = []
-weldgun_size = 19
+weldgun_size = 19 
 
 def main() : 
     theSession  = NXOpen.Session.GetSession()
@@ -25,9 +26,7 @@ def main() :
     # ----------------------------------------------
     #   Menu: File->Open...
     # ----------------------------------------------
-    #basePart1, partLoadStatus1 = theSession.Parts.OpenActiveDisplay("K:\\Nedlastninger\\maze.prt", NXOpen.DisplayPartOption.AllowAdditional)
-    basePart1, partLoadStatus1 = theSession.Parts.OpenActiveDisplay("K:\\Biblioteker\\Dokumenter\\Skole\\Automatisering\\TMM4275-Assignment3\\mazetest.prt", NXOpen.DisplayPartOption.AllowAdditional)
-    #basePart1, partLoadStatus1 = theSession.Parts.OpenActiveDisplay("K:\\Biblioteker\\Dokumenter\\Skole\\Automatisering\\TMM4275-Assignment3\\mazecomplex.prt", NXOpen.DisplayPartOption.AllowAdditional)
+    basePart1, partLoadStatus1 = theSession.Parts.OpenActiveDisplay("K:\\Biblioteker\\Dokumenter\\Skole\\Automatisering\\TMM4275-Assignment3\\uploadedFiles\\weldingModel.prt", NXOpen.DisplayPartOption.AllowAdditional)
 
     workPart = theSession.Parts.Work # maze
     displayPart = theSession.Parts.Display # maze
@@ -146,15 +145,72 @@ def addBlocks():
             colorstring = "GREEN"
         blockN = Block(input[0], input[1], 0, input[2], input[3], 1, colorstring, "Steel")
         blockN.initForNX()
+
+def getNozzleSize():
+    f = open("K:\\Biblioteker\\Dokumenter\\Skole\\Automatisering\\TMM4275-Assignment3\\variables.txt", "r") 
+    size = int(f.read())
+    f.close()
+    return size
+
+def saveImage():
+    theSession  = NXOpen.Session.GetSession()
+    workPart = theSession.Parts.Work
+    displayPart = theSession.Parts.Display
+    # ----------------------------------------------
+    #   Menu: Fit
+    # ----------------------------------------------
+    workPart.ModelingViews.WorkView.Fit()
+    
+    scaleAboutPoint1 = NXOpen.Point3d(122.35160156613561, 129.05579891222513, 0.0)
+    viewCenter1 = NXOpen.Point3d(-122.35160156613561, -129.05579891222536, 0.0)
+    workPart.ModelingViews.WorkView.ZoomAboutPoint(0.80000000000000004, scaleAboutPoint1, viewCenter1)
+    
+    # ----------------------------------------------
+    #   Menu: File->Export->Image...
+    # ----------------------------------------------
+    markId1 = theSession.SetUndoMark(NXOpen.Session.MarkVisibility.Visible, "Start")
+    
+    theUI = NXOpen.UI.GetUI()
+    
+    imageExportBuilder1 = theUI.CreateImageExportBuilder()
+    
+    imageExportBuilder1.RegionMode = False
+    
+    regiontopleftpoint1 = [None] * 2 
+    regiontopleftpoint1[0] = 0
+    regiontopleftpoint1[1] = 0
+    imageExportBuilder1.SetRegionTopLeftPoint(regiontopleftpoint1)
+    
+    imageExportBuilder1.RegionWidth = 1
+    
+    imageExportBuilder1.RegionHeight = 1
+    
+    imageExportBuilder1.FileFormat = NXOpen.Gateway.ImageExportBuilder.FileFormats.Png
+    
+    imageExportBuilder1.FileName = "K:\\Biblioteker\\Dokumenter\\Skole\\Automatisering\\TMM4275-Assignment3\\static\\weldCheck.png"
+    
+    imageExportBuilder1.BackgroundOption = NXOpen.Gateway.ImageExportBuilder.BackgroundOptions.Original
+    
+    imageExportBuilder1.EnhanceEdges = False
+    
+    nXObject1 = imageExportBuilder1.Commit()
+    
+    theSession.DeleteUndoMark(markId1, "Export Image")
+    
+    imageExportBuilder1.Destroy()
+    
+    # ----------------------------------------------
+    #   Menu: Tools->Journal->Stop Recording
+    # ----------------------------------------------
         
 
 if __name__ == '__main__':
     main()
+    weldgun_size = getNozzleSize()
     getFaces()
-    print("alllllllll lines",all_lines)
     getVerticals()
     verticals = removeDuplicatesAndSort(verticals)
     rectanlges = createRectanlges(verticals)
     addBlocks()
-    print("rectanlges",rectanlges)
+    saveImage()
 
