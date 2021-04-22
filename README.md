@@ -51,8 +51,9 @@ In assignment 1 Olingvo and Apache Jena Fuseki was used to communicate with the 
 ## Examples of Three Different Product Orders  
 
 ### The Layout of the Web Page the Customer Uses
-![img name](img url)
-
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/webpage.PNG)
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/file%20uploaded.PNG)
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze2%20weldability.PNG)
 ### A Customer Trying to Order Outside the Constraints
 ![img name](img url)
 
