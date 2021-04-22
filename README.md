@@ -37,13 +37,13 @@ This code was made using python and HTML in Visual Studio Code, the Flask extens
 In assignment 1 Olingvo and Apache Jena Fuseki was used to communicate with the server containing the parameters, as stated above, this was not used in assignment 2 or 3. This is because the constraints are set by the server, in the same place where they are recieved from the customer. 
 
 ### Code Description 
-- `server.py` - Setting up the webpage using Flask. Recieving input from the customer and saving it, as well as redirecting to the correct html pages
+- `weldServer.py` - Setting up the webpage using Flask. Recieving input from the customer and saving it, as well as redirecting to the correct html pages
 - `templates` - Folder containing the html pages
   - `index.html` - The first html page the customer sees, where they select type of nozzle on the welding gun and upload the .prt file
   - `uploader.html` - The page returned to the customer when the input has been recieved, redirects the customer back to home page or to the page containing results of the weldability checker
   - `result.html`- The page showing the customer the result of the weldability checker 
 
-- `Weldability.py`- NX Open Journal file finding all the possible places of the maze the weld gun will fit in and can weld. Then marking these places as either green(possible to weld) or red (not possible to weld)
+- `weldability.py`- NX Open Journal file finding all the possible places of the maze the weld gun will fit in and can weld. Then marking these places as either green(possible to weld) or red (not possible to weld)
 
 - `uploadedFiles` - Folder where the uploaded .prt file is saved
 - `static` - Folder where the image of the result is saved
