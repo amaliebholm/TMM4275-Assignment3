@@ -51,12 +51,14 @@ In assignment 1 Olingvo and Apache Jena Fuseki was used to communicate with the 
 ## Examples of Three Different Product Orders  
 
 ### The Layout of the Web Page the Customer Uses
+The webpage displayed chronologically: 
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/webpage.PNG)
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/file%20uploaded.PNG)
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze2%20weldability.PNG)
 
 
 ### Example 1 
+The maze priovided by the customer:
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze%20prt%20file%20example.PNG) - customer setting input 
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/mazetest%20above.PNG) 
 - reviecing result with the Recessed nuzzle chosen.
@@ -66,8 +68,10 @@ NB! Observe the difference between the result here and in example 1. The welding
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/mazetest%20flush.PNG) 
 - reviecing result with the Flushed nozzle chosen.
 ### Example 3
-![img name](img url) - customer setting input 
-![img name](img url) - reviecing result
+The maze priovided by the customer
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze1%20no%20input.PNG) - customer setting input 
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze%201%20flush.PNG) 
+- reviecing result with Flushed nozzle chosen.
 
 ### Common Conclusion on Building KBE System based on the three assignments 
 Before this course none of us had any experience with building KBE Systems, but through the course we have learned a lot. We have learned that there are a lot of complex structures and architecture surrounding what can seem as a simple web page for a customer. We have also learned how important it is that all these components are able to comunicate in a proper way. It was a timeconsuming but rewarding process to develop these KBE Systems. 
