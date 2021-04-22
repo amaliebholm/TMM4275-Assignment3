@@ -48,30 +48,34 @@ In assignment 1 Olingvo and Apache Jena Fuseki was used to communicate with the 
 - `uploadedFiles` - Folder where the uploaded .prt file is saved
 - `static` - Folder where the image of the result is saved
 
-## Examples of Three Different Product Orders  
 
 ### The Layout of the Web Page the Customer Uses
-The webpage displayed chronologically: 
+The webpage displayed chronologically: Here the customer can change weld gun nozzle and upload their prt file.
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/webpage.PNG)
+After uploading the prt file the customer is taken to /uploader for upload-vertification. Here they may choose to show the results for the current maze, or they may upload a new file.
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/file%20uploaded.PNG)
+The /result page shows the custumer where the maze can be welded and gives them the option to upload a new file.
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze2%20weldability.PNG)
 
-
+## Examples of Three Different Product Orders  
 ### Example 1 
-The maze priovided by the customer:
-![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze%20prt%20file%20example.PNG) - customer setting input 
-![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/mazetest%20above.PNG) 
+The maze provided by the customer:
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze%20prt%20file%20example.PNG)
 - reviecing result with the Recessed nuzzle chosen.
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/mazetest%20above.PNG) 
 ### Example 2
-customer setting input is the same maze as in Example 1
-NB! Observe the difference between the result here and in example 1. The welding gun nuzzle has been changed from Recessed to Flushed. The Flushed nozzle is a bit larger and will not fit where the Recessed does.
-![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/mazetest%20flush.PNG) 
+The maze provided by the customeris the same maze as in Example 1
+NB! Observe the difference between the result here and in example 1. The welding gun nuzzle has been changed from Recessed to Flushed. The Flushed nozzle is a bit larger and now there is an extra area in the midlle that will not fit where the Recessed does.
 - reviecing result with the Flushed nozzle chosen.
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/mazetest%20flush.PNG) 
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/mazetest%20recessed%20nozzle.PNG) 
+
 ### Example 3
-The maze priovided by the customer
+The maze provided by the customer:
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze1%20no%20input.PNG) 
-![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze%201%20flush.PNG) 
 - reviecing result with Flushed nozzle chosen.
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze%201%20flush.PNG) 
+
 
 ### Common Conclusion on Building KBE System based on the three assignments 
 Before this course none of us had any experience with building KBE Systems, but through the course we have learned a lot. We have learned that there are a lot of complex structures and architecture surrounding what can seem as a simple web page for a customer. We have also learned how important it is that all these components are able to comunicate in a proper way. It was a timeconsuming but rewarding process to develop these KBE Systems. 
