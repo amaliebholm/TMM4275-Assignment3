@@ -17,7 +17,7 @@ The costumer will upload and define:
 * Define type of nozzle on the welding gun
 
 ### The KBE Application Architecture
-This is a diagram showing the main blocks and interconnections between them. 
+This is the block diagram showing the main blocks and interconnections between them. 
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/Weld%20Main%20Blocks.png)
 
 
@@ -54,17 +54,17 @@ In assignment 1 Olingvo and Apache Jena Fuseki was used to communicate with the 
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/webpage.PNG)
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/file%20uploaded.PNG)
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze2%20weldability.PNG)
-### A Customer Trying to Order Outside the Constraints
-![img name](img url)
+
 
 ### Example 1 
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze%20prt%20file%20example.PNG) - customer setting input 
-![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/mazetest%20above.PNG) - reviecing result
-With Recessed nuzzle.
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/mazetest%20above.PNG) 
+- reviecing result with the Recessed nuzzle chosen.
 ### Example 2
-![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze%20prt%20file%20example.PNG) - customer setting input 
-![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/mazetest%20flush.PNG) - reviecing result
-With flushed nozzle
+customer setting input is the same maze as in Example 1
+NB! Observe the difference between the result here and in example 1. The wielding gun nuzzle has been changed from Recessed to Flushed. The Flushed nozzle is a bit larger and will not fit where the Recessed does.
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/mazetest%20flush.PNG) 
+- reviecing result with the Flushed nozzle chosen.
 ### Example 3
 ![img name](img url) - customer setting input 
 ![img name](img url) - reviecing result
