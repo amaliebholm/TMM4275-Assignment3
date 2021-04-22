@@ -69,7 +69,7 @@ NB! Observe the difference between the result here and in example 1. The welding
 - reviecing result with the Flushed nozzle chosen.
 ### Example 3
 The maze priovided by the customer
-![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze1%20no%20input.PNG) - customer setting input 
+![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze1%20no%20input.PNG) 
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze%201%20flush.PNG) 
 - reviecing result with Flushed nozzle chosen.
 
