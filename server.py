@@ -40,7 +40,7 @@ def home():
 def upload_file():
     if request.method == 'POST':
         file = request.files['file']
-        file.filename = "weildingModel.prt"
+        file.filename = "weldingModel.prt"
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         print("File: ", filename)
@@ -59,13 +59,13 @@ def show_result():
 def write_to_File(nozzle):
     diameter = 0.0
     if nozzle == 'Protruding':
-        diameter = 25.6
+        diameter = 25
         print("Diameter set to ", diameter)
     elif nozzle == 'Flush':
         diameter = 30
         print("Diameter set to ", diameter)
     elif nozzle == 'Adjustable':
-        diameter = 25.6
+        diameter = 26
         print("Diameter set to ", diameter)
     elif nozzle == 'Recessed':
         diameter = 19
