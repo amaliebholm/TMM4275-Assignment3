@@ -9,7 +9,7 @@ This project is made by:
 
 ### The Maze-like Structure
 The image below is an example of how a structure may look. 
-![maze prt file example.PNG](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze%20prt%20file%20example.PNG)
+![maze prt file example.PNG](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze2%20no%20input.PNG)
 
 
 The costumer will upload and define: 
