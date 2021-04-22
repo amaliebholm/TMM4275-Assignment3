@@ -62,7 +62,7 @@ In assignment 1 Olingvo and Apache Jena Fuseki was used to communicate with the 
 - reviecing result with the Recessed nuzzle chosen.
 ### Example 2
 customer setting input is the same maze as in Example 1
-NB! Observe the difference between the result here and in example 1. The wielding gun nuzzle has been changed from Recessed to Flushed. The Flushed nozzle is a bit larger and will not fit where the Recessed does.
+NB! Observe the difference between the result here and in example 1. The welding gun nuzzle has been changed from Recessed to Flushed. The Flushed nozzle is a bit larger and will not fit where the Recessed does.
 ![img name](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/mazetest%20flush.PNG) 
 - reviecing result with the Flushed nozzle chosen.
 ### Example 3
