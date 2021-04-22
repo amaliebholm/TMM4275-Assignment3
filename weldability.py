@@ -25,7 +25,7 @@ def main() :
     displayPart = theSession.Parts.Display
     # ----------------------------------------------
     #   Menu: File->Open...
-    # ----------------------------------------------
+    # ---------------------------------------------- #Change path to the folder where you receive prt files from the server
     basePart1, partLoadStatus1 = theSession.Parts.OpenActiveDisplay("K:\\Biblioteker\\Dokumenter\\Skole\\Automatisering\\TMM4275-Assignment3\\uploadedFiles\\weldingModel.prt", NXOpen.DisplayPartOption.AllowAdditional)
 
     workPart = theSession.Parts.Work # maze
@@ -139,7 +139,7 @@ def createRectanlges(verticals): #uses the weld lines to construct sqaures that 
 def addBlocks():
     colorstring = "YELLOW" #placeholder, if any blocks are yellow they have not gotten a color based on size
     for input in rectanlges:
-        if input[2] < weldgun_size or input[3] < weldgun_size: #If the 
+        if input[2] < weldgun_size or input[3] < weldgun_size:
             colorstring = "RED"
         if input[2] >= weldgun_size and input[3] >= weldgun_size:
             colorstring = "GREEN"
@@ -152,7 +152,7 @@ def getNozzleSize():
     f.close()
     return size
 
-def saveImage():
+def saveImage(): #Part of the journal that fits the part to the window, rotates it and export the png
     theSession  = NXOpen.Session.GetSession()
     workPart = theSession.Parts.Work
     displayPart = theSession.Parts.Display
