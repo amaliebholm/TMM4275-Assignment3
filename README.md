@@ -18,7 +18,7 @@ The costumer will upload and define:
 
 ### The KBE Application Architecture
 This is a diagram showing the main blocks and interconnections between them. 
-![img name](img url)
+![diagram](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/Weld%20Sequence%20Diagram.png)
 
 
 The main lines of the KBE architecture are the same as in assignment 1 and 2, where the customer will give inputs on a website, but in stead of setting values for different parameter, as in the previous assignments, the customer will now upload a .prt file as well. In the previous assignments the values have been transfered to a DFA file, which have been uploaded to NX, in this assignment the .prt file is directly uploaded to NX. As in assignment 2, there is no need for a Fuseki server her either, as the constraints are given by the choice of welding gun and that a ".prt" file is the only possible file to upload. 
