@@ -9,7 +9,8 @@ This project is made by:
 
 ### The Maze-like Structure
 The image below is an example of how a structure may look. 
-![img name](img url)
+![maze prt file example.PNG](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze%20prt%20file%20example.PNG)
+
 
 The cusomer will upload and define: 
 * Upload .prt file 
@@ -17,8 +18,8 @@ The cusomer will upload and define:
 
 ### The KBE Application Architecture
 This is a diagram showing the main blocks and interconnections between them. 
+![img name](img url)
 
-![maze prt file example.PNG](https://github.com/amaliebholm/TMM4275-Assignment3/blob/main/READme%20pictures/maze%20prt%20file%20example.PNG)
 
 The main lines of the KBE architecture are the same as in assignment 1 and 2, where the customer will give inputs on a website, but in stead of setting values for different parameter, as in the previous assignments, the customer will now upload a .prt file as well. In the previous assignments the values have been transfered to a DFA file, which have been uploaded to NX, in this assignment the .prt file is directly uploaded to NX. As in assignment 2, there is no need for a Fuseki server her either, as the constraints are given by the choice of welding gun and that a ".prt" file is the only possible file to upload. 
 
